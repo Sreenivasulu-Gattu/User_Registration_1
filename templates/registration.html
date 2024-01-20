@@ -7,17 +7,56 @@
     <style>
         body
         {
-            background-color: chocolate;
+            background:linear-gradient(rgb(241, 202, 209),rgb(241, 166, 178),rgb(208, 121, 135),45deg);
+        }
+        [for='id_username']
+        {
+            font-size: 20px;
+        }
+        label
+        {
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        input,textarea
+        {
+            border: none;
+            text-decoration: none;
+            border-radius: 10px;
+            height: 30px;
+            background-color: rgb(225, 211, 245);
+
+        }
+        textarea
+        {
+            padding: 10px;
+        }
+        fieldset
+        {
+            margin:7% 20%;
+            border-radius: 0px 20px 30px 40px;
+            border: 6px solid rgb(232, 145, 219);
+        }
+        legend
+        {
+            font-family:'Times New Roman', Times, serif;
+            font-size: 1.7vw;
+        }
+        #submit
+        {
+            background-color: rgb(244, 157, 219);
         }
     </style>
 </head>
 <body>
     <center>
         <form method="POST">
-            {% csrf_token %}
-                {{ufo.as_p}}
-                {{pfo.as_p}}
-            <input type="submit" value="Register">
+            <fieldset>
+                <legend>Registration Form</legend>
+                    {% csrf_token %}
+                    {{ufo.as_p}}
+                    {{pfo.as_p}}
+                    <input type="submit" value="Register">
+            </fieldset>
         </form>
     </center>
 </body>
