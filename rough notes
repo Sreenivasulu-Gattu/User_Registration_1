@@ -1,0 +1,14 @@
+Go to settings.py 
+
+EMAIL_HOST = 'username'
+EMAIL_HOST_USER = 'from mail id'
+EMAIL_HOST_PASSWORD = '2 step verification app passwords..'
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
+EMAIL_PORT = [465 FOR ssl, 587 FOR tls]
+
+
+and then go to views.py 
+import django.core.mail import send_mail
+
+send_mail = ('subject','body content','from mail id',['to mail'],fail_silently = False)
