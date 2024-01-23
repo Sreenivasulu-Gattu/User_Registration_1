@@ -134,7 +134,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 
 EMAIL_HOST_USER = 'sreenugattu5@gmail.com'
 
-EMAIL_HOST_PASSWORD = 'okfj nbas dmpr ikru'
+EMAIL_HOST_PASSWORD = 'zywh dztx nkys jgxw'
 
 EMAIL_USE_TLS = True
 

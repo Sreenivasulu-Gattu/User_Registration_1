@@ -4,4 +4,7 @@ from django.contrib import admin
 
 from app.models import *
 
-admin.site.register(Profile)
+class Custom(admin.ModelAdmin):
+    list_display = ['username','address','profile_pic']
+
+admin.site.register(Profile,Custom)
