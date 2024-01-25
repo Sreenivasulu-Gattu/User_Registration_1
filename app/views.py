@@ -5,8 +5,9 @@ from django.shortcuts import render
 from app.forms import *
 from django.http import HttpResponse,HttpResponseRedirect
 from django.core.mail import send_mail
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 def registration(request):
     ufo = UserForm()
@@ -63,4 +64,19 @@ def user_login(request):
             return HttpResponse('Invalid Credentials')
     return render(request,'user_login.html')
 
+# login decorator is required for logout 
+# so from django.contrib.auth.decorators import login_required
 
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('home'))
+
+
+@login_required
+def display_profile(request):
+    un = request.session.get('username')
+    uo = User.objects.get(username = un)
+    po = Profile.objects.get(username = uo)
+    d = {'uo':uo,'po':po}
+    return render(request,'display_profile.html',d)
