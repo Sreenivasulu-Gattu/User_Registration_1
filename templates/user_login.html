@@ -13,7 +13,8 @@
             <input type="text" name="un" id="un"><br><br>
             <label for="pw">Password</label>
             <input type="password" name="pw" id="pw"><br><br>
-            <input type="submit" value="Login">
+            <input type="submit" value="Login" class="btn btn-primary"><br>
         </form>
+        <br><a href="{% url 'forgot_password' %}" class="btn btn-danger">Forgot Password</a>
     </center>
 {% endblock %}
